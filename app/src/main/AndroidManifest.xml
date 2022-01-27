@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.seminarmobileprojectexam">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SeminarMobileProjectExam">
+
+        <activity
+            android:name=".Res_detail"
+            android:parentActivityName=".Restaurant"
+            android:exported="true" />
+        <activity
+            android:name=".Cine_detail"
+            android:parentActivityName=".Cinema"
+            android:exported="true" />
+        <activity
+            android:name=".Hos_Detail"
+            android:exported="true"
+            android:parentActivityName=".Hospital" />
+        <activity
+            android:name=".Market_Detail"
+            android:exported="true"
+            android:parentActivityName=".Supermarket" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".Supermarket"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Hospital"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Cinema"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Restaurant"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".AddDataActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true"
+            android:label="Profile"
+            android:theme="@style/AppTheme.ProfileTheme"/>
+
+
+    </application>
+</manifest>

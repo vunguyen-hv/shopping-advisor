@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ProfileActivity"
+    tools:showIn="@layout/activity_profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            style="@style/headerText"
+            android:text="Account Info"
+            android:layout_marginBottom="25dp"/>
+
+        <RelativeLayout style="@style/profileDetailsLayout">
+            <ImageView
+                android:id="@+id/nameImageView"
+                android:src="@drawable/ic_name"
+                style="@style/profileDetailsImage" />
+
+            <TextView
+                android:text="Name"
+                android:layout_toRightOf="@id/nameImageView"
+                android:textSize="25sp"
+                style="@style/profileDetailsTextMain" />
+
+            <TextView
+                android:text="Your name"
+                android:id="@+id/usernameProfile"
+                android:layout_toRightOf="@id/nameImageView"
+                android:textSize="20sp"
+                style="@style/profileDetailsMiniText" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+
+        <RelativeLayout style="@style/profileDetailsLayout">
+
+            <ImageView
+                android:id="@+id/emailImageView"
+                style="@style/profileDetailsImage"
+                android:src="@drawable/ic_email" />
+
+            <TextView
+                android:text="Email"
+                android:textSize="25sp"
+                android:layout_toRightOf="@id/emailImageView"
+                style="@style/profileDetailsTextMain"/>
+
+            <TextView
+                android:text="Your email"
+                android:id="@+id/emailProfile"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/emailImageView"
+                style="@style/profileDetailsMiniText" />
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="20dp"
+            android:background="@color/profileBackground">
+
+            <TextView
+                android:text="Edit profile"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:id="@+id/editOption"
+                style="@style/profileStyledBackButton" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="20dp"
+            android:background="@color/profileBackground">
+            <TextView
+                android:text="Back to Home"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:id="@+id/backHome"
+                android:drawableLeft="@drawable/back_to_home_button"
+                style="@style/profileStyledBackButton" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ProfileActivity"
+    tools:showIn="@layout/activity_edit_profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            style="@style/headerText"
+            android:text="Account Info"
+            android:layout_marginBottom="15dp"/>
+
+        <RelativeLayout style="@style/profileDetailsLayout" android:layout_marginTop="15dp">
+            <ImageView
+                android:id="@+id/nameImageView"
+                android:src="@drawable/ic_name"
+                style="@style/profileDetailsImage" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/nameImageView">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/usernameEditProfile"
+                    android:hint="New username"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@color/cardview_light_background"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+
+        <RelativeLayout style="@style/profileDetailsLayout">
+
+            <ImageView
+                android:id="@+id/oldemailImageView"
+                style="@style/profileDetailsImage"
+                android:src="@drawable/ic_email" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/oldemailImageView"
+                app:passwordToggleTint="@color/colorPrimary"
+                android:scrollbarSize="25dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/oldpasswordEditProfile"
+                    android:hint="Old Password"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@color/cardview_light_background"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/profileDetailsLayout">
+
+            <ImageView
+                android:id="@+id/newemailImageView"
+                style="@style/profileDetailsImage"
+                android:src="@drawable/ic_email" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/newemailImageView"
+                android:scrollbarSize="25dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/newpasswordEditProfile"
+                    android:hint="New Password"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@color/cardview_light_background"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/profileDetailsLayout">
+
+            <ImageView
+                android:id="@+id/reemailImageView"
+                style="@style/profileDetailsImage"
+                android:src="@drawable/ic_email" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/reemailImageView"
+                android:scrollbarSize="25dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/repasswordEditProfile"
+                    android:hint="Re-type New Password"
+                    android:inputType="textPassword"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@color/cardview_light_background"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <View style="@style/proifleDetailsView" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="20dp"
+            android:background="@color/profileBackground">
+
+            <TextView
+                android:text="Save"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:id="@+id/saveOption"
+                style="@style/profileStyledBackButton" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="20dp"
+            android:background="@color/profileBackground">
+            <TextView
+                android:text="Cancel"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:drawableLeft="@drawable/back_to_home_button"
+                android:id="@+id/cancelOption"
+                style="@style/profileStyledBackButton" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--  Insert cinema  -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="movie"
+        android:textSize="20sp"
+        android:id="@+id/movie"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cinema"
+        android:textSize="20sp"
+        android:id="@+id/cinema"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hospital"
+        android:textSize="20sp"
+        android:id="@+id/hospital"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="food"
+        android:textSize="20sp"
+        android:id="@+id/food"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="restaurant"
+        android:textSize="20sp"
+        android:id="@+id/restaurant"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="clothes"
+        android:textSize="20sp"
+        android:id="@+id/clothes"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="supermarket"
+        android:textSize="20sp"
+        android:id="@+id/supermarket"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="user"
+        android:textSize="20sp"
+        android:id="@+id/user"/>
+
+</LinearLayout>

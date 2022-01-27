@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home"
+
+        />
+    <item
+        android:id="@+id/restaurant"
+        android:title="Restaurant"
+        android:icon="@drawable/ic_baseline_restaurant_24"
+        />
+    <item
+        android:id="@+id/supermarket"
+        android:title="Supermarket"
+        android:icon="@mipmap/supermarket"
+        />
+    <item
+        android:id="@+id/hospital"
+        android:title="Hospital"
+        android:icon="@drawable/ic_baseline_local_hospital_"
+        />
+    <item
+        android:id="@+id/cinema"
+        android:title="Cinema"
+        android:icon="@drawable/ic_baseline_movie_24"
+        />
+</menu>
