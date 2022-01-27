@@ -35,6 +35,7 @@ public class Supermarket extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     private User user = null;
+    private String address = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
