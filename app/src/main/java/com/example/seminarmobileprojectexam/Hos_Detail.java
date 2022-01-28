@@ -12,9 +12,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.seminarmobileprojectexam.HospitalData.HospitalObj;
 import com.example.seminarmobileprojectexam.HospitalData.HospitalViewModel;
+import com.example.seminarmobileprojectexam.Map.MapsActivity;
 
 public class Hos_Detail extends AppCompatActivity {
-
+    HospitalObj hospitalObj =null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +25,21 @@ public class Hos_Detail extends AppCompatActivity {
         if(bundle!=null){
             int Id = bundle.getInt("ID");
             HospitalViewModel hospitalViewModel = new ViewModelProvider(this).get(HospitalViewModel.class);
-            HospitalObj hospitalObj = hospitalViewModel.findById(Id);
+            hospitalObj = hospitalViewModel.findById(Id);
             prepareContent(hospitalObj);
         }
+
+        TextView direction = findViewById(R.id.direction);
+        direction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (hospitalObj != null) {
+                    Intent intent = new Intent(view.getContext(), MapsActivity.class);
+                    intent.putExtra("address", hospitalObj.getAddress());
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
     private void prepareContent(HospitalObj hospitalObj){

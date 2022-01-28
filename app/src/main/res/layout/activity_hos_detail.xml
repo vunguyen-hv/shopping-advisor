@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Hos_Detail">
-
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -26,6 +30,7 @@
             android:ellipsize="end"
             android:textColor="@color/grey"
             android:textSize="23sp"
+            android:drawablePadding="10dp"
             android:clickable="true"
             android:onClick="findRoute"/>
 
@@ -39,6 +44,7 @@
             android:id="@+id/available_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
             android:drawableStart="@drawable/ic_access_time_black_24dp"
             android:ellipsize="end"
             android:textColor="@color/grey"
@@ -59,6 +65,7 @@
             android:ellipsize="end"
             android:lines="1"
             android:textColor="@color/grey"
+            android:drawablePadding="10dp"
             android:textSize="18sp"
             android:text="4.67"/>
 
@@ -75,6 +82,7 @@
             android:drawableStart="@drawable/baseline_favorite_24"
             android:ellipsize="end"
             android:textColor="@color/grey"
+            android:drawablePadding="10dp"
             android:textSize="18sp"
             android:text="Add To Your Favorite"/>
 
@@ -87,15 +95,16 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/table_booking"
+            android:id="@+id/direction"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawableStart="@drawable/baseline_book_24"
+            android:drawableStart="@drawable/ic_baseline_map_24"
+            android:drawablePadding="10dp"
             android:ellipsize="end"
             android:lines="1"
             android:textColor="@color/grey"
             android:textSize="18sp"
-            android:text="Bookmark"/>
+            android:text="Direction"/>
 
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -112,14 +121,18 @@
             android:ellipsize="end"
             android:textColor="@color/grey"
             android:textSize="18sp"
+            android:drawablePadding="10dp"
             android:clickable="true"
             android:onClick="makeCall"/>
 
     </androidx.cardview.widget.CardView>
 
-    <ListView
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listVaccination"/>
+        android:text="see the main specialties of the hospital"
+        android:textColor="@color/black"
 
-</LinearLayout>
+        />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

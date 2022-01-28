@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.seminarmobileprojectexam.Map.MapsActivity;
 import com.example.seminarmobileprojectexam.SupermarketData.ClothesViewModel;
 import com.example.seminarmobileprojectexam.SupermarketData.MarketObj;
 import com.example.seminarmobileprojectexam.SupermarketData.MarketViewModel;
@@ -18,7 +19,7 @@ import com.example.seminarmobileprojectexam.SupermarketData.MarketViewModel;
 import java.util.ArrayList;
 
 public class Market_Detail extends AppCompatActivity {
-
+    MarketObj marketObj =null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +29,20 @@ public class Market_Detail extends AppCompatActivity {
         if(bundle!=null){
             int Id = bundle.getInt("ID");
             MarketViewModel marketViewModel = new ViewModelProvider(this).get(MarketViewModel.class);
-            MarketObj marketObj = marketViewModel.findById(Id);
+            marketObj = marketViewModel.findById(Id);
             populateListClothes(marketObj);
         }
+        TextView direction = findViewById(R.id.direction);
+        direction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (marketObj != null) {
+                    Intent intent = new Intent(view.getContext(), MapsActivity.class);
+                    intent.putExtra("address", marketObj.getAddress());
+                    startActivity(intent);
+                }
+            }
+        });
 
 
     }
@@ -47,13 +59,14 @@ public class Market_Detail extends AppCompatActivity {
         TextView contact = findViewById(R.id.phone_numbers);
         contact.setText(marketObj.getPhone());
 
-        ListView listView = (ListView) findViewById(R.id.listClothes);
-        ClothesViewModel clothesViewModel = new ClothesViewModel(getApplication());
-        ArrayList<DataItem> dataItems = new ArrayList<>();
-        // add them data vao day
-
-        ItemAdapter itemAdapter = new ItemAdapter(this, dataItems);
-        listView.setAdapter(itemAdapter);
+//        ListView listView = (ListView) findViewById(R.id.listClothes);
+//        ClothesViewModel clothesViewModel = new ClothesViewModel(getApplication());
+//        ArrayList<DataItem> dataItems = new ArrayList<>();
+//
+//        // add them data vao day
+//
+//        ItemAdapter itemAdapter = new ItemAdapter(this, dataItems);
+//        listView.setAdapter(itemAdapter);
     }
 
     public void makeCall(View view) {

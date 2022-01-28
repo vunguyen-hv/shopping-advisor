@@ -12,22 +12,40 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.seminarmobileprojectexam.CinemaData.CinemaObj;
 import com.example.seminarmobileprojectexam.CinemaData.CinemaViewModel;
+import com.example.seminarmobileprojectexam.Map.MapsActivity;
 
 public class Cine_detail extends AppCompatActivity {
-
+    private CinemaObj cinemaObj = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cine_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle bundle = getIntent().getExtras();
-        if(bundle!=null){
+        if(bundle!=null)
+        {
             int Id = bundle.getInt("ID");
             CinemaViewModel cinemaViewModel = new ViewModelProvider(this).get(CinemaViewModel.class);
-            CinemaObj cinemaObj = cinemaViewModel.findById(Id);
+            cinemaObj = cinemaViewModel.findById(Id);
             prepareContent(cinemaObj);
         }
-    }
+
+        TextView direction = findViewById(R.id.direction);
+        direction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cinemaObj != null) {
+                    Intent intent = new Intent(view.getContext(), MapsActivity.class);
+                    intent.putExtra("address", cinemaObj.getAddress());
+                    startActivity(intent);
+                }
+            }
+        });
+
+
+
+    };
+
 
     private void prepareContent(CinemaObj cinemaObj) {
         ImageView imageView = findViewById(R.id.cinemaImage);

@@ -16,4 +16,11 @@
     <string name="close">Close</string>
 
     <string name="empty_description">No description available.</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+
+    <string name="API_MAP_KEY">AIzaSyAJ90vLTAWalHDUGMH0ToMnSq8GDGa93kE</string>
+    <string name="mapbox_token">pk.eyJ1IjoiaHZ2biIsImEiOiJja3d1M2JlbTgxODdsMm5xbDlpcHd6Z2YxIn0.nFvdyZm0a1JNKwtxsQ1AJw</string>
+
+
 </resources>

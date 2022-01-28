@@ -10,11 +10,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.seminarmobileprojectexam.Map.MapsActivity;
 import com.example.seminarmobileprojectexam.RestaurantData.RestaurantObj;
 import com.example.seminarmobileprojectexam.RestaurantData.RestaurantViewModel;
 
 public class Res_detail extends AppCompatActivity {
-
+    RestaurantObj restaurantObj = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +25,21 @@ public class Res_detail extends AppCompatActivity {
         if(bundle!=null){
             int Id = bundle.getInt("ID");
             RestaurantViewModel restaurantViewModel = new ViewModelProvider(this).get(RestaurantViewModel.class);
-            RestaurantObj restaurantObj = restaurantViewModel.findById(Id);
+            restaurantObj = restaurantViewModel.findById(Id);
             prepareContent(restaurantObj);
         }
+        TextView direction = findViewById(R.id.direction);
+        direction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (restaurantObj != null) {
+                    Intent intent = new Intent(view.getContext(), MapsActivity.class);
+                    intent.putExtra("address", restaurantObj.getAddress());
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
 
     private void prepareContent(RestaurantObj restaurantObj) {
